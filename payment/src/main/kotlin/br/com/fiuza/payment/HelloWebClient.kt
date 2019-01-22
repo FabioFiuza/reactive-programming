@@ -5,10 +5,9 @@ import org.springframework.web.reactive.function.client.WebClient
 
 class HelloWebClient {
 
-    private val client = WebClient.create("http://localhost:8080")
+    private val client = WebClient.create("http://localhost:8680")
 
     private val result = client.get()
-            .uri("/hello")
             .exchange()
 
     fun getResult(): String {
