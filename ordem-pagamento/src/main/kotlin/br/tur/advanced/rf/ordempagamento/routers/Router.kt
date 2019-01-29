@@ -12,7 +12,9 @@ class Router {
     @Bean
     fun opRouter (handler: OpHandler) = router {
         ("/orderPagamento" and accept(MediaType.APPLICATION_JSON)).nest {
-            POST("/criar", handler::criar)
+            GET("/", handler::findAll)
+            GET("/{id}", handler::findAll)
+            POST("/criar", handler::created)
         }
     }
 }
